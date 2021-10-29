@@ -42,8 +42,7 @@ public final class KubernetesAuthenticationDemo {
                 .withOauthToken(token)
                 .withNamespace(namespace);
 
-            Config config = builder.build();
-
+            final Config config = builder.build();
             final KubernetesClient client = new DefaultKubernetesClient(config);
             
             PodList pods = client.pods().inNamespace(namespace).list();
@@ -52,7 +51,10 @@ public final class KubernetesAuthenticationDemo {
                        
             client.close();
 
-        } catch (Exception e) {};
+        } catch (KubernetesClientException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
 
 }
