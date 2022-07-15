@@ -58,7 +58,7 @@
     <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>kubernetes-client</artifactId>
-        <version>5.9.0</version>
+        <version>5.11.2</version>
     </dependency>
     <dependency>
       <groupId>com.microsoft.azure</groupId>
